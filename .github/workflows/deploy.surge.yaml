@@ -18,16 +18,16 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      -uses: action/checkout@v2
+      - uses: action/checkout@v2
       
       #Run a single command using the runner shell
-    - name: Install Node JS
-     uses: actions/setup-node@v2-beta
-     with:
+      - name: Install Node JS
+        uses: actions/setup-node@v2-beta
+        with:
          node-version: 12
-     - name: Install surge
-      run: npm install -g surge
+      - name: Install surge
+        run:  npm install -g surge
       - name: Run Surge
-       run: surge ./ bootcampapp.surge.sh --token ${{secrets.SURGE_TOKEN}} 
+        run:  surge ./ bootcampapp.surge.sh --token ${{secrets.SURGE_TOKEN}} 
       
       
