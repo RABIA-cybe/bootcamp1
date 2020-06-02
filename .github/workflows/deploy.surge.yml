@@ -18,7 +18,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: action/checkout@v2
+      - uses: actions/checkout@v2
       
       #Run a single command using the runner shell
       - name: Install Node JS
@@ -28,6 +28,6 @@ jobs:
       - name: Install surge
         run:  npm install -g surge
       - name: Run Surge
-        run:  surge ./ myappboot.surge.sh --token ${{secrets.SURGE_TOKEN}} 
+        run:  surge ./ cybewebsite.surge.sh --token ${{secrets.SURGE_TOKEN}} 
       
       
